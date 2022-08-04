@@ -14,6 +14,7 @@ class Network: ObservableObject{
         //and we can call it more easily
     @Published var characters: [CharacterElement] = []
     @Published var quotes: [QuoteElement] = []
+    @Published var bcsCharacters: [CharacterElement] = []
      var isFavourited: Bool = false
     
     //use the chracter name to populate the qoutes
@@ -54,6 +55,7 @@ class Network: ObservableObject{
         
         dataTask.resume()
     }
+    
     
     func getQuotes() async throws{
         
