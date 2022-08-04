@@ -5,6 +5,7 @@
 
 import Foundation
 
+
     // MARK: - CharacterElement
 struct CharacterElement: Decodable {
     var char_id: Int?
@@ -14,7 +15,7 @@ struct CharacterElement: Decodable {
     var status: String?
     var nickname: String?
     var portrayed: String?
-    var better_call_saul_appearance: [Int]?
+    var better_call_saul_appearance: [Int?]
     
 }
 

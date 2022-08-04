@@ -14,13 +14,13 @@ class Network: ObservableObject{
         //and we can call it more easily
     @Published var characters: [CharacterElement] = []
     @Published var quotes: [QuoteElement] = []
-    @Published var bcsCharacters: [CharacterElement] = []
+    @Published var episodes: [EpisodeElement] = []
      var isFavourited: Bool = false
     
     //use the chracter name to populate the qoutes
 //    @Published var characterName : String =
     
-    
+        //MARK: Character Fetcher
     func getCharacters() {
             //make sure we have url
         guard let url = URL(string: "https://www.breakingbadapi.com/api/characters") else { fatalError("Missing URL") }
@@ -56,7 +56,7 @@ class Network: ObservableObject{
         dataTask.resume()
     }
     
-    
+        //MARK: Quote Fetcher
     func getQuotes() async throws{
         
     
@@ -70,6 +70,23 @@ class Network: ObservableObject{
         let decodedQuotes = try JSONDecoder().decode([QuoteElement].self, from: data)
         DispatchQueue.main.async {
             self.quotes = decodedQuotes
+        }
+    }
+    //MARK: Episode Fetcher
+    func getEpisodes() async throws{
+        
+    
+        guard let url = URL(string: "https://www.breakingbadapi.com/api/episodes") else { fatalError("Missing URL") }
+        
+        let urlRequest = URLRequest(url: url)
+        let (data,response) =  try  await URLSession.shared.data(for: urlRequest)
+            //fetch data
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else{fatalError("Error while fetching data")}
+            //decode
+        let decodedEpisodes = try JSONDecoder().decode([EpisodeElement].self, from: data)
+        DispatchQueue.main.async {
+            print(decodedEpisodes)
+            self.episodes = decodedEpisodes
         }
     }
 }

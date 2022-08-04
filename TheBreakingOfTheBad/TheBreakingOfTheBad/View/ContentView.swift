@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    @EnvironmentObject  var network: Network
     @State var chracterName = ""
 
     
@@ -26,8 +26,15 @@ struct ContentView: View {
                     Image(systemName: "person")
                     Text("Better Call Saul")
                 }
+            EpisodeListView()
+                .environmentObject(Network())
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Episodes")
+                }
             
         }
+
         //MARK: TabView end
     }
 }
@@ -66,6 +73,7 @@ struct CombinedCharacters: View{
         .task {
             do{
                 try await network.getQuotes()
+                
                 
             }
             catch{

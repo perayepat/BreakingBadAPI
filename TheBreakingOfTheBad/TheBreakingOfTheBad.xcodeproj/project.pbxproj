@@ -10,6 +10,9 @@
 		61B9A9F7289BD56800088164 /* FavouriteSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9A9F6289BD56800088164 /* FavouriteSelectionScreen.swift */; };
 		61B9A9FA289BD72800088164 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 61B9A9F9289BD72800088164 /* Lottie */; };
 		61B9A9FC289BDBF100088164 /* BetterCallSaulCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9A9FB289BDBF100088164 /* BetterCallSaulCharacters.swift */; };
+		6A3F9F18289C0E6F004CEFBE /* EpisodesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F9F17289C0E6F004CEFBE /* EpisodesModel.swift */; };
+		6A3F9F1A289C159B004CEFBE /* EpisodeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F9F19289C159B004CEFBE /* EpisodeRowView.swift */; };
+		6A3F9F1D289C1ACE004CEFBE /* EpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F9F1C289C1ACE004CEFBE /* EpisodeListView.swift */; };
 		6A444FC4286D968E001026E1 /* LoadFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A444FC3286D968E001026E1 /* LoadFromFile.swift */; };
 		6A444FC6286D9706001026E1 /* previewUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A444FC5286D9706001026E1 /* previewUser.json */; };
 		6A444FD1286DBBC3001026E1 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A444FD0286DBBC3001026E1 /* CacheAsyncImage.swift */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		61B9A9F6289BD56800088164 /* FavouriteSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteSelectionScreen.swift; sourceTree = "<group>"; };
 		61B9A9FB289BDBF100088164 /* BetterCallSaulCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterCallSaulCharacters.swift; sourceTree = "<group>"; };
+		6A3F9F17289C0E6F004CEFBE /* EpisodesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesModel.swift; sourceTree = "<group>"; };
+		6A3F9F19289C159B004CEFBE /* EpisodeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRowView.swift; sourceTree = "<group>"; };
+		6A3F9F1C289C1ACE004CEFBE /* EpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListView.swift; sourceTree = "<group>"; };
 		6A444FC3286D968E001026E1 /* LoadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFromFile.swift; sourceTree = "<group>"; };
 		6A444FC5286D9706001026E1 /* previewUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = previewUser.json; sourceTree = "<group>"; };
 		6A444FD0286DBBC3001026E1 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A3F9F1B289C1AB9004CEFBE /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				6A3F9F19289C159B004CEFBE /* EpisodeRowView.swift */,
+				6A3F9F1C289C1ACE004CEFBE /* EpisodeListView.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
 		6A444FC7286DAFBF001026E1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,7 @@
 			children = (
 				6A7F7F8028636F01008EAC02 /* Character.swift */,
 				6A87B29628657DCB00BC3865 /* Quote.swift */,
+				6A3F9F17289C0E6F004CEFBE /* EpisodesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +141,7 @@
 				6A444FD2286DC011001026E1 /* ErrorView.swift */,
 				61B9A9F6289BD56800088164 /* FavouriteSelectionScreen.swift */,
 				61B9A9FB289BDBF100088164 /* BetterCallSaulCharacters.swift */,
+				6A3F9F1B289C1AB9004CEFBE /* Episodes */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A3F9F1D289C1ACE004CEFBE /* EpisodeListView.swift in Sources */,
+				6A3F9F1A289C159B004CEFBE /* EpisodeRowView.swift in Sources */,
 				61B9A9F7289BD56800088164 /* FavouriteSelectionScreen.swift in Sources */,
 				6A59A9C1286449DA006B532E /* previewImage.swift in Sources */,
 				6A444FD1286DBBC3001026E1 /* CacheAsyncImage.swift in Sources */,
@@ -219,6 +238,7 @@
 				6A85838B28634A1C00BC68A7 /* TheBreakingOfTheBadApp.swift in Sources */,
 				6A444FD3286DC011001026E1 /* ErrorView.swift in Sources */,
 				61B9A9FC289BDBF100088164 /* BetterCallSaulCharacters.swift in Sources */,
+				6A3F9F18289C0E6F004CEFBE /* EpisodesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,7 +43,7 @@ struct CharacterDetailView: View {
             
             VStack{
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     Text(character.name ?? "" )
                         .font(.title)
                         .fontWeight(.bold)
@@ -81,6 +81,7 @@ struct CharacterDetailView: View {
                         }
                     }
                 }
+                
                 .offset(y: -30)
                 
             }
