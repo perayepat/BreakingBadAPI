@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterCardView: View {
-    var character : CharacterElement?
+    var character : CharacterElement
     @State var isFavourited: Bool = false
     
     var body: some View {
@@ -17,7 +17,7 @@ struct CharacterCardView: View {
             
             VStack {
                 CacheAsyncImage(
-                    url: URL(string: character!.img)!
+                    url: URL(string: character.img ?? "")!
                    ) { phase in
                        switch phase {
                        case .success(let image):
@@ -46,14 +46,14 @@ struct CharacterCardView: View {
             
             VStack(spacing: 5){
                 
-                Text(character!.name)
+                Text(character.name ?? "")
                     .fontWeight(.bold)
                 
                 HStack(alignment: .center){
                     Text("Potrayed By:")
                         .font(.system(size: 9))
                         .fontWeight(.light)
-                    Text(character!.portrayed)
+                    Text(character.portrayed ?? "")
                         .font(.system(size: 9))
                 }
                 
@@ -61,7 +61,7 @@ struct CharacterCardView: View {
                     Text("Nickname :")
                         .font(.system(size: 9))
                         .fontWeight(.light)
-                    Text(character!.nickname)
+                    Text(character.nickname ?? "")
                         .font(.system(size: 9))
                 }
                 
@@ -103,7 +103,7 @@ struct CharacterCardView: View {
 struct CharacterCardView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CharacterCardView(character: previewChar)
+        CharacterCardView(character: .tempCharacter)
             .previewLayout(.sizeThatFits)
         
     }
