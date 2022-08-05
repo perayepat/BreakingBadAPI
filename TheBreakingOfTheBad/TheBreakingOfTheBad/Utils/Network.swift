@@ -72,6 +72,8 @@ class Network: ObservableObject{
             self.quotes = decodedQuotes
         }
     }
+    
+    
     //MARK: Episode Fetcher
     func getEpisodes() async throws{
         

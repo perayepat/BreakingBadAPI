@@ -12,46 +12,7 @@ struct EpisodeListView: View {
     var body: some View {
         ScrollView{
             ForEach(network.episodes,id: \.episode_id){eps in
-                VStack {
-                    HStack {
-                        VStack {
-                            Text("Episode")
-                                .font(.caption)
-                            Spacer()
-                                .frame( height: 5)
-                            Text(eps.episode ?? "")
-                                .font(.system(size: 55, weight: .bold))
-                        }
-                        .foregroundColor(.white)
-                        .frame(width: 80, height: 100)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                .opacity(0.8)
-                        )
-                        Spacer()
-                        
-                        VStack{
-                            Text(eps.title ?? "")
-                                .font(.system(size: 15,weight: .bold))
-                                .padding(.bottom,1)
-                            Text("Season: \(eps.season ?? "")")
-                                .bold()
-                                .font(.caption)
-                            Text("Air Date: \(eps.air_date ?? "")")
-                                .font(.caption2)
-                            Text("Air Date: \(eps.series ?? "")")
-                                .font(.caption2)
-                        }
-                        Spacer()
-                            
-                    }
-                    .background(
-                        
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .stroke(lineWidth: 1)
-                    )
-                    
-                }
+             EpisodeRowView(episode: eps)
                 
             }
             

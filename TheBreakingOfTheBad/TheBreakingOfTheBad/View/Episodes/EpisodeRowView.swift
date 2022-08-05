@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EpisodeRowView: View {
     var episode: EpisodeElement
+    @State var showChacracters: Bool = false
     var body: some View {
         VStack {
             HStack {
@@ -21,47 +22,39 @@ struct EpisodeRowView: View {
                         .font(.system(size: 55, weight: .bold))
                 }
                 .foregroundColor(.white)
-                .frame(width: 80, height: 100)
+                .frame(width: 80, height:showChacracters ? 200:100)
                 .background(
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .opacity(0.8)
                 )
+                
                 Spacer()
                     
                 VStack{
                     Text(episode.title ?? "")
                         .font(.system(size: 15,weight: .bold))
                         .padding(.bottom,1)
+                    Text("\(episode.series ?? "")")
+                        .font(.caption)
                     Text("Season: \(episode.season ?? "")")
-                        .font(.callout)
+                        .font(.caption)
                     Text("Air Date: \(episode.air_date ?? "")")
-                        .font(.callout)
+                        .font(.caption2)
+                  
                 }
                 Spacer()
-                    .frame(width: 90)
+                    
             }
+            .frame(height:showChacracters ? 200:100)
+       
             .background(
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(lineWidth: 1)
             )
-//            .overlay(
-//                
-//                VStack {
-//                    if episode.series == "Breaking Bad" {
-//                        Image("brba")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 70, height: 70)
-//                    .offset(x: 130, y: -50)
-//                    } else {
-//                        Image("bcs")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 70, height: 70)
-//                    .offset(x: 130, y: -50)
-//                    }
-//                }
-//            )
+            .onTapGesture {
+                showChacracters.toggle()
+            }
+            .animation(.spring(response: 0.6, dampingFraction: 0.5, blendDuration: 0), value: showChacracters)
         .padding([.leading,.trailing], 10)
         }
         

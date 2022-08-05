@@ -68,6 +68,7 @@ struct CharacterDetailView: View {
                     Text("Quotes")
                         .font(.title)
                         .fontWeight(.bold)
+                    
                     ForEach(quotes!, id: \.quote_id) { quote in
                         if (quote.author == character.name){
                         Text(quote.quote)
